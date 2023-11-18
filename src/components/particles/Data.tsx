@@ -99,7 +99,7 @@ export const MembershipPlans = {
 
 export const ContactTexts = {
     firstText: "call us today",
-    phone: "(+234)70-6910-6259",
+    phone: "+84966494779",
     paragraph: "At our gym, you can reach out to any of our trainers to schedule a session. Home services is also within the scope of out services. Your fitness is our concern! Health is wealth!",
     button: "Schedule A Meet"
 }
@@ -192,13 +192,13 @@ export const FooterTexts = {
         caption: "Quick Contacts",
         names: [
             {
-                name: "11567 Santa Monica Blvd, Los Angeles, CA 90025, United States",
+                name: "360 Giải Phóng Thanh Xuân Hà Nội",
             },
             {
-                name: "gym_nex@example.com",
+                name: "leuducquy@gmail.com",
             },
             {
-                name: "+1 424-248-8496",
+                name: "+84966494779",
             }
         ]
     },
