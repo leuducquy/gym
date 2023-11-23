@@ -10,7 +10,7 @@ import { Button } from "../atoms/Button";
 import { ArrowCircleLeft, ArrowCircleRight, YoutubeLogo } from "@phosphor-icons/react";
 import StickyIcons from "../molecules/StickyIcons";
 import { Slide, Zoom } from "react-awesome-reveal";
-import { Trans, useTranslation } from 'react-i18next'
+import {  useTranslation } from 'react-i18next'
 
 const HeroSection = () => {
     const {  i18n,  } = useTranslation('default');

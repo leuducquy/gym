@@ -5,7 +5,7 @@ import Image3 from "../../assets/gym/4.jpeg";
 import Image4 from "../../assets/gym/5.jpeg";
 import { Image } from "../atoms/Image";
 import { Text } from "../atoms/Text";
-import { AboutTexts } from "../particles/Data";
+
 import { useTranslation } from "react-i18next";
 
 const About = () => {

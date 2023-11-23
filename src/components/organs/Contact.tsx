@@ -1,7 +1,7 @@
 import { Image } from "../atoms/Image"
 import ContactImg from "../../assets/gym/4.jpeg"
 import { Text } from "../atoms/Text"
-import { ContactTexts } from "../particles/Data"
+
 import { Button } from "../atoms/Button"
 
 import TranText from "../translate"
