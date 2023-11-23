@@ -3,19 +3,20 @@ import { Image } from "../atoms/Image"
 import HeroImg1 from "../../assets/hero/1.jpeg"
 import HeroImg2 from "../../assets/hero/2.jpeg"
 import HeroImg3 from "../../assets/hero/3.jpeg"
-import { HeroTexts } from "../particles/Data";
+import { HeroTexts,HeroTextsVi } from "../particles/Data";
 import Slider from "react-slick";
 import { Text } from "../atoms/Text";
 import { Button } from "../atoms/Button";
 import { ArrowCircleLeft, ArrowCircleRight, YoutubeLogo } from "@phosphor-icons/react";
 import StickyIcons from "../molecules/StickyIcons";
 import { Slide, Zoom } from "react-awesome-reveal";
-
+import { Trans, useTranslation } from 'react-i18next'
 
 const HeroSection = () => {
-
+    const {  i18n,  } = useTranslation('default');
     const sliderRef = useRef<Slider | null>();
-
+    const getCurrentLng = () => i18n.language || window.localStorage.i18nextLng || '';
+  const ArrrayTrans = getCurrentLng() === "en" ? HeroTexts : HeroTextsVi
     // Function for next button
     const next = () => {
         if (sliderRef.current) {
@@ -58,7 +59,9 @@ const HeroSection = () => {
         <section className="w-full h-auto bg-gradient-to-r from-red-500 to-amber-500 relative overflow-x-hidden">
             <Slider ref={(slider) => (sliderRef.current = slider)} {...settings} className="h-full">
                 {
-                    HeroTexts.map((hero, index) => (
+                    
+                    ArrrayTrans.map((hero, index) => {
+                        return (
                         <main className="w-full lg:h-screen md:h-[50vh] h-screen relative bg-zinc-900 overflow-x-hidden" key={index}>
                             <Zoom className="h-full">
                                 <Image className="md:w-[60%] w-full md:h-full h-1/2" alt="HeroImg1" objectCover="object-cover" image={renderProfileImg(index)} />
@@ -67,7 +70,8 @@ const HeroSection = () => {
                             <div className="md:w-[50%] w-full md:h-full h-1/2 absolute md:top-0 top-1/2 right-0 bg-zinc-900 flex flex-col md:justify-center justify-start lg:gap-8 md:gap-4 gap-2 lg:px-20 md:px-6 px-4 overflow-x-hidden">
                                 <Text as="h1" className="lg:text-6xl md:text-4xl text-4xl md:mt-10 mt-10 text-zinc-100 font-extrabold">
                                     <Slide direction="right">
-                                        {hero.Heading}
+                                    {/* {hero.Heading} */}
+                                    {hero.Heading}
                                     </Slide>
                                 </Text>
                                 <Text as="p" className="lg:text-lg text-base text-zinc-400 my-4">
@@ -90,8 +94,9 @@ const HeroSection = () => {
                                 </div>
                             </div>
                         </main>
-
-                    ))
+                        )
+})
+               
                 }
             </Slider>
             <div className="flex justify-end lg:justify-start items-center gap-4 absolute lg:bottom-10 md:bottom-5 md:right-10 right-4 bottom-4">

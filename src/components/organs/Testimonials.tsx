@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import { Card } from "../molecules/Card";
 import { Image } from "../atoms/Image";
 import { Star, StarHalf } from "@phosphor-icons/react";
-
+import TranText from '../translate'
 
 const Testimonials = () => {
 
@@ -73,8 +73,8 @@ const Testimonials = () => {
             <main className="w-full lg:h-[700px] md:h-[600px] flex flex-col justify-center items-center gap-10 md:gap-10 py-12 md:py-0">
 
                 <div className="flex flex-col mt-10 items-center relative before:absolute before:-bottom-6 before:left-30 before:w-20 before:h-1 before:rounded-lg before:bg-gradient-to-r before:from-amber-500 before:to-red-500 z-10">
-                    <Text as="p" className="text-amber-500 lg:text-sm text-xs tracking-widest uppercase font-medium">{TestimonialTexts.firstText}</Text>
-                    <Text as="h1" className="text-zinc-100 lg:text-5xl md:text-4xl text-3xl">{TestimonialTexts.secondText}</Text>
+                    <Text as="p" className="text-amber-500 lg:text-sm text-xs tracking-widest uppercase font-medium">{TranText('TestimonialTexts.firstText')}</Text>
+                    <Text as="h1" className="text-zinc-100 lg:text-5xl md:text-4xl text-3xl">{TranText('TestimonialTexts.secondText')}</Text>
                     <Text as="h1" className="absolute text-zinc-500/20 md:left-24 lg:left-28 left-20 lg:text-9xl md:text-7xl text-6xl font-extrabold lg:-top-32 md:-top-20 -top-16 -z-10">05</Text>
                 </div>
 

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-import { NavLinks } from "../particles/Data"
+import { NavLinks ,NavLinksVi} from "../particles/Data"
 import { List } from "../atoms/List";
 import { NavLink } from "react-router-dom";
 import { ArrowCircleRight, Barbell, CirclesFour } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { Text } from "../atoms/Text";
-
+import {checkLange} from "../translate/checkLang";
 
 const NavBar = () => {
 
@@ -16,7 +16,7 @@ const NavBar = () => {
     const handleToggle = () => {
         setOpen(!open)
     }
-
+    const arrayTrans = checkLange() === "en" ? NavLinks : NavLinksVi
     const listenScrollEvent = () => {
         window.scrollY > 10 ? setNavBarColor(true) : setNavBarColor(false);
     };
@@ -42,7 +42,7 @@ const NavBar = () => {
                 <div className="lg:flex hidden items-center h-full gap-20">
                     <ul className="flex items-center justify-center h-full gap-4 relative before:w-full before:h-0.5 before:absolute before:bottom-0 before:left-0 before:bg-zinc-400">
                         {
-                            NavLinks.map((navlink, index) => (
+                            arrayTrans.map((navlink, index) => (
                                 <List className="w-full text-base" key={index}>
                                     <NavLink to={navlink.url} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}>{navlink.name}</NavLink>
                                 </List>
